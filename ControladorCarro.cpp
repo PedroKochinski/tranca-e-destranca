@@ -11,3 +11,13 @@ std::string ControladorCarro::obterInformacaoCarro(Carro* carro) {
     }
     return "";
 }
+
+void ControladorCarro::trancarCarro(Carro* carro) {
+    ControlaTrancamento* controlaTrancamento = new ControlaTrancamento();
+    controlaTrancamento->trancar(carro);
+}
+
+void ControladorCarro::destrancarCarro(Carro* carro) {
+    ControlaTrancamento* controlaTrancamento = new ControlaTrancamento();
+    controlaTrancamento->destrancar(carro);
+}
