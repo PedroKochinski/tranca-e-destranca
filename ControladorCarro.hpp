@@ -10,7 +10,6 @@ class ControladorCarro {
     public:
         bool verificarCredenciaisUsuario(Usuario* usuario);
         std::string obterInformacaoCarro(Carro* carro);
-        
 };
 
 #endif

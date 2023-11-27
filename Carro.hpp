@@ -4,7 +4,9 @@
 #include <string>
 #include "Usuario.hpp"
 #include "InformacaoCarro.hpp"
+
 class Usuario;
+class InformacaoCarro;
 
 class Carro{
 
@@ -23,7 +25,6 @@ class Carro{
         void setAno(const int ano);
         void setProprietario(Usuario* proprietario);
         InformacaoCarro* getInformacaoCarro();
-
         void imprimeDados(); // Especialista
 
 

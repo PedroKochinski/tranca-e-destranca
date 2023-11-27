@@ -5,6 +5,8 @@
 #include <iostream>
 #include "Usuario.hpp"
 
+class Usuario;
+
 class Credenciais {
     public:
         bool verificarCredenciaisUsuario(Usuario* usuario);

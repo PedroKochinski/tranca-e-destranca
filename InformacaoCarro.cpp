@@ -25,3 +25,7 @@ void InformacaoCarro::setInformacao(std::string dataManutencao, std::string desc
     this->descricao = descricao;
     this->situacao = situacao;
 }
+
+void InformacaoCarro::setSituacao(std::string situacao) {
+    this->situacao = situacao;
+}

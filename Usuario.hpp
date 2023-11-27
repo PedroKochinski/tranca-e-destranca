@@ -4,7 +4,7 @@
 #include <string>
 #include <list>
 #include "Carro.hpp"
-
+#include "Credenciais.hpp"
 class Carro;
 
 class Usuario{
