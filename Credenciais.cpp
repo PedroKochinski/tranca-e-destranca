@@ -1,4 +1,4 @@
-#include "Credentiais.hpp"
+#include "Credenciais.hpp"
 
 bool Credenciais::verificarCredenciaisUsuario(Usuario* usuario) {
     if(usuario != nullptr) {

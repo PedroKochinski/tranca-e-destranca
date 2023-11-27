@@ -2,8 +2,8 @@
 #define CREDENCIAIS_HPP
 
 #include <string>
+#include <iostream>
 #include "Usuario.hpp"
-
 
 class Credenciais {
     public:

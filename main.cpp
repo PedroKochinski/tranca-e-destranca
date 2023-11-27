@@ -2,6 +2,6 @@
 #include "Usuario.hpp"
 #include "Carro.hpp"
 
-int main {
+int main () {
     return 0;
 }

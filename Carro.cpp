@@ -46,3 +46,7 @@ void Carro::setAno(const int ano) {
 void Carro::setProprietario(Usuario* proprietario) {
     this->proprietario = proprietario;
 }
+
+InformacaoCarro* Carro::getInformacaoCarro() {
+    return this->informacaoCarro;
+}

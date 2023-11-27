@@ -3,7 +3,7 @@
 
 #include <string>
 #include "Usuario.hpp"
-
+#include "InformacaoCarro.hpp"
 class Usuario;
 
 class Carro{
@@ -20,6 +20,7 @@ class Carro{
         void setModelo(const std::string modelo);
         void setAno(const int ano);
         void setProprietario(Usuario* proprietario);
+        InformacaoCarro* getInformacaoCarro();
         void imprimeDados();
 
     private:
@@ -27,6 +28,7 @@ class Carro{
         std::string modelo;
         int ano;
         Usuario* proprietario;
+        InformacaoCarro* informacaoCarro;
 };
 
 #endif
