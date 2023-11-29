@@ -3,9 +3,7 @@
 
 #include <string>
 #include <list>
-#include "Carro.hpp"
 #include "Credenciais.hpp"
-class Carro;
 
 class Usuario{
     public:
@@ -22,14 +20,10 @@ class Usuario{
         void setNome(const std::string nome);
         std::string getNome() const;
 
-        void adicionarCarro(Carro* carro);
-        void removerCarro(Carro* carro);
-        std::list<Carro*> obterCarrosPossuidos() const;
 
     private:
         std::string nome;
         std::string email;
         std::string senha;
-        std::list<Carro*> carrosPossuidos;
 };
 #endif

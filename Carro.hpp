@@ -2,40 +2,44 @@
 #define CARRO_HPP
 
 #include <string>
+#include "StatusCarro.hpp"
 #include "Usuario.hpp"
-#include "InformacaoCarro.hpp"
 
-class Usuario;
-class InformacaoCarro;
+namespace carro {
 
 class Carro{
 
     public:
         Carro();
-        Carro(std::string marca, std::string modelo, int ano, Usuario* proprietario);
-        virtual ~Carro() = default;
+        Carro(std::string placa, std::string marca, std::string modelo, int ano, Usuario* proprietario);
+        virtual ~Carro();
 
+        std::string getPlaca() const;
         std::string getMarca() const;
         std::string getModelo() const;
-
         int getAno() const;
         Usuario* getProprietario() const;
+        StatusCarro *getStatusCarro();
+
+        void setPlaca(const std::string marca);
         void setMarca(const std::string marca);
-        void setModelo(const std::string modelo);
         void setAno(const int ano);
+        void setModelo(const std::string modelo);
         void setProprietario(Usuario* proprietario);
-        InformacaoCarro* getInformacaoCarro();
+
         void imprimeDados(); // Especialista
 
-
     private:
+        StatusCarro* status;
+        std::string placa;
         std::string marca;
         std::string modelo;
         int ano;
         Usuario* proprietario;
-        InformacaoCarro* informacaoCarro;
 
         bool ValidarAno(int ano) const;
 };
+
+}
 
 #endif

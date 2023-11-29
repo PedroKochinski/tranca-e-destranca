@@ -38,17 +38,3 @@ void Usuario::setEmail(const std::string email) {
 void Usuario::setSenha(const std::string senha) {
     this->senha = senha;
 }
-
-void Usuario::adicionarCarro(Carro *carro) {
-    if(carro != nullptr)
-        this->carrosPossuidos.push_back(carro);
-}
-
-void Usuario::removerCarro(Carro *carro) {
-    if(carro != nullptr)
-        this->carrosPossuidos.remove(carro);
-}
-
-std::list<Carro*> Usuario::obterCarrosPossuidos() const {
-    return this->carrosPossuidos;
-}

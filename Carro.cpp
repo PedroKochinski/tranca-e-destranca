@@ -1,12 +1,26 @@
 #include "Carro.hpp"
+
 #include <chrono> // validar ano
 #include <iostream> // imprimir dados
 
-Carro::Carro()
-    : marca{""}, modelo{""}, ano{0}, proprietario{nullptr} {}
+namespace carro {
 
-Carro::Carro(std::string marca, std::string modelo, int ano, Usuario* proprietario)
-: marca{marca}, modelo{modelo}, ano{ano}, proprietario{proprietario} {}
+Carro::Carro()
+    : placa{""}, marca{""}, modelo{""}, ano{0}, proprietario{nullptr} {}
+
+Carro::Carro(std::string placa, std::string marca, std::string modelo, int ano, Usuario* proprietario)
+: status{new StatusCarro()}, placa{}, marca{marca}, modelo{modelo}, proprietario{proprietario} {
+    setAno(ano);
+}
+
+Carro::~Carro(){
+    delete status;
+}
+
+std::string Carro::getPlaca() const{
+    return this->placa;
+}
+
 
 std::string Carro::getMarca() const {
     return this->marca;
@@ -22,6 +36,10 @@ int Carro::getAno() const {
 
 Usuario* Carro::getProprietario() const {
     return this->proprietario;
+}
+
+void Carro::setPlaca(const std::string placa) {
+    this->placa = placa;
 }
 
 void Carro::setMarca(const std::string marca) {
@@ -60,10 +78,6 @@ void Carro::setProprietario(Usuario* proprietario) {
     this->proprietario = proprietario;
 }
 
-InformacaoCarro* Carro::getInformacaoCarro() {
-    return this->informacaoCarro;
-}
-
 // Especialista
 // Se a Classe sabe suas informações, ela pode assumir a responsabilidade
 // de imprimir seus dados
@@ -72,6 +86,12 @@ void Carro::imprimeDados(){
     std::cout << "Marca: " << getMarca() << std::endl;
     std::cout << "Modelo: " << getModelo() << std::endl;
     std::cout << "Ano: " << getAno() << std::endl;
-    std::cout << "Proprietário: " << getProprietario() << std::endl;
+    std::cout << "Proprietário: " << getProprietario()->getNome() << std::endl << std::endl;
+
+}
+
+StatusCarro* Carro::getStatusCarro() {
+    return this->status;
+}
 
 }
