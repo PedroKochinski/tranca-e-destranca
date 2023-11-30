@@ -1,6 +1,8 @@
 #include "Usuario.hpp"
 #include "Carro.hpp"
 
+namespace carro{
+
 Usuario::Usuario() {
     this->nome = "";
     this->email = "";
@@ -37,4 +39,6 @@ void Usuario::setEmail(const std::string email) {
 
 void Usuario::setSenha(const std::string senha) {
     this->senha = senha;
+}
+
 }

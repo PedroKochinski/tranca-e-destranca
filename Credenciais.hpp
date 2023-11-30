@@ -3,14 +3,16 @@
 
 #include <string>
 #include <iostream>
-#include "Usuario.hpp"
 
-class Usuario;
+#include "Carro.hpp"
+
+namespace carro {
 
 class Credenciais {
     public:
         bool verificarCredenciaisUsuario(Usuario* usuario);
          
 };
+}
 
 #endif

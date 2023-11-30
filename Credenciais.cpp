@@ -1,5 +1,7 @@
 #include "Credenciais.hpp"
 
+namespace carro {
+
 bool Credenciais::verificarCredenciaisUsuario(Usuario* usuario) {
     if(usuario != nullptr) {
         std::string nome, email, senha;
@@ -14,4 +16,6 @@ bool Credenciais::verificarCredenciaisUsuario(Usuario* usuario) {
         }
     }
     return false;
+}
+
 }

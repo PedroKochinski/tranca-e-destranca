@@ -3,7 +3,8 @@
 
 #include <string>
 #include <list>
-#include "Credenciais.hpp"
+
+namespace carro{
 
 class Usuario{
     public:
@@ -20,10 +21,11 @@ class Usuario{
         void setNome(const std::string nome);
         std::string getNome() const;
 
-
     private:
         std::string nome;
         std::string email;
         std::string senha;
 };
+}
+
 #endif

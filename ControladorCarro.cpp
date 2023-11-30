@@ -37,20 +37,25 @@ void ControladorCarro::removerCarro(std::string placa){
     }
 }
 
-EnumStatusCarro ControladorCarro::obterStatusCarro(std::string placa) {
+std::string ControladorCarro::obterStatusCarro(std::string placa) {
     std::list<Carro*>::iterator it{listaCarros.begin()};
 
     // Procura carro pela placa e devolve seu status
     while(it != listaCarros.end()){
         if((*it)->getPlaca() == placa){
-            StatusCarro* st{(*it)->getStatusCarro()};
-            return st->getStatus();
+            EnumStatusCarro st{(*it)->getStatusCarro()->getStatus()};
+            if(st == EnumStatusCarro::TRANCADO){
+                return "Veículo Trancado.";
+            }
+            else{
+                return "Veículo Destrancado.";
+            }
         }else{
             it++;
         }
     }
 
-    return EnumStatusCarro::TRANCADO;
+    return "Veículo não encontrado.";
 }
 
 void ControladorCarro::trancarCarro(std::string placa) {

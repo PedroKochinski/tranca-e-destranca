@@ -3,8 +3,8 @@ nomePrograma=aula
 
 all: $(nomePrograma)
 
-$(nomePrograma): main.o Usuario.o Carro.o Credenciais.o ControladorCarro.o StatusCarro.o
-	g++ -o $(nomePrograma) main.o Usuario.o Carro.o Credenciais.o ControladorCarro.o  StatusCarro.o $(parametrosCompilacao)
+$(nomePrograma): main.o Usuario.o Carro.o Credenciais.o ControladorCarro.o StatusCarro.o UserInterface.o
+	g++ -o $(nomePrograma) main.o Usuario.o Carro.o Credenciais.o ControladorCarro.o StatusCarro.o UserInterface.o $(parametrosCompilacao)
 
 main.o: main.cpp
 	g++ -c main.cpp $(parametrosCompilacao)
@@ -23,5 +23,9 @@ ControladorCarro.o: ControladorCarro.hpp ControladorCarro.cpp
 
 StatusCarro.o: StatusCarro.hpp StatusCarro.cpp
 	g++ -c StatusCarro.cpp $(parametrosCompilacao)
+
+UserInterface.o: UserInterface.hpp UserInterface.cpp
+	g++ -c UserInterface.cpp $(parametrosCompilacao)
+
 clean:
 	rm -f *.o *.gch $(nomePrograma)

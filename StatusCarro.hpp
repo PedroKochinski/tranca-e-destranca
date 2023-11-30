@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 
-#include "Usuario.hpp"
 #include "EnumStatusCarro.hpp"
 
 // Classe responsável por estado atual do carro: localização e estado de trancamento

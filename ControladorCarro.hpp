@@ -7,8 +7,8 @@
 
 #include "Usuario.hpp"
 #include "Carro.hpp"
-
 #include "EnumStatusCarro.hpp"
+#include "Credenciais.hpp"
 
 // Objeto de interface responsável por gerenciar eventos do sistema,
 // definindo métodos para operações do sistema: trancar carro, cadastrar
@@ -26,7 +26,7 @@ class ControladorCarro {
         void cadastrarCarro(std::string placa, std::string marca, std::string modelo, int ano, Usuario* proprietario);
         void removerCarro(std::string placa);       
 
-        EnumStatusCarro obterStatusCarro(std::string placa);
+        std::string obterStatusCarro(std::string placa);
         void trancarCarro(std::string placa);
         void destrancarCarro(std::string placa);
 

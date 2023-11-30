@@ -30,14 +30,13 @@ class Carro{
         void imprimeDados(); // Especialista
 
     private:
-        StatusCarro* status;
         std::string placa;
         std::string marca;
         std::string modelo;
         int ano;
         Usuario* proprietario;
 
-        bool ValidarAno(int ano) const;
+        StatusCarro* status;
 };
 
 }

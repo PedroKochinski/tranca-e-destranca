@@ -9,8 +9,7 @@ Carro::Carro()
     : placa{""}, marca{""}, modelo{""}, ano{0}, proprietario{nullptr} {}
 
 Carro::Carro(std::string placa, std::string marca, std::string modelo, int ano, Usuario* proprietario)
-: status{new StatusCarro()}, placa{}, marca{marca}, modelo{modelo}, proprietario{proprietario} {
-    setAno(ano);
+: placa{placa}, marca{marca}, modelo{modelo}, ano{ano}, proprietario{proprietario}, status{new StatusCarro()} {
 }
 
 Carro::~Carro(){
@@ -20,7 +19,6 @@ Carro::~Carro(){
 std::string Carro::getPlaca() const{
     return this->placa;
 }
-
 
 std::string Carro::getMarca() const {
     return this->marca;
@@ -50,27 +48,7 @@ void Carro::setModelo(const std::string modelo) {
     this->modelo = modelo;
 }
 
-bool Carro::ValidarAno(int ano) const {
-
-    // Get the current time point and convert to std::time_t
-    auto currentTime = std::chrono::system_clock::now();
-    std::time_t time = std::chrono::system_clock::to_time_t(currentTime);
-
-    // convert to std::tm and access current year
-    std::tm* timeInfo = std::gmtime(&time);
-    int ano_atual = timeInfo->tm_year + 1900;
-
-    if(ano < 1950 || ano > ano_atual){
-        return false;
-    }
-
-    return true;
-}
-
 void Carro::setAno(const int ano) {
-    if(!ValidarAno(ano))
-        throw (int)1;
-
     this->ano = ano;
 }
 
@@ -83,11 +61,11 @@ void Carro::setProprietario(Usuario* proprietario) {
 // de imprimir seus dados
 void Carro::imprimeDados(){
 
+    std::cout << "Placa: " << getPlaca() << std::endl;
     std::cout << "Marca: " << getMarca() << std::endl;
     std::cout << "Modelo: " << getModelo() << std::endl;
     std::cout << "Ano: " << getAno() << std::endl;
     std::cout << "Proprietário: " << getProprietario()->getNome() << std::endl << std::endl;
-
 }
 
 StatusCarro* Carro::getStatusCarro() {
